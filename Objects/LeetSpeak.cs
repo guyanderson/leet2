@@ -6,46 +6,55 @@ namespace LeetSpeak.Objects
 {
   public class LeetSpeak
   {
-    private char[] _userString;
-    public char[] _newString;
-
+    private string _toCheck;
     public LeetSpeak(string userSentence)
     {
-      _userString = userSentence.ToCharArray();
+      _toCheck = userSentence;
     }
 
-    public char[] ChangeToLeetSpeak(string userString)
+    public bool IsCharE(char c)
     {
-      for(int toCheck = 0; toCheck <= _userString.Length; toCheck++)
+      return c == 'e' || c == 'E';
+    }
+    public bool IsCharO(char c)
+    {
+      return c == 'o' || c == 'O';
+    }
+    public bool IsCharI(char c)
+    {
+      return c == 'I';
+    }
+    public bool IsCharT(char c)
+    {
+      return c == 't' || c == 'T';
+    }
+    public bool IsCharS(char c)
+    {
+      return c == 's' || c == 'S';
+    }
+    public char Convert(char c)
+    {
+      if(IsCharE(c))
       {
-        if(IsCharE(toCheck))
-        {
-          _userString[toCheck] = '3';
-          _newString.Add(_userString[toCheck]);
-        }
+        return '3';
       }
-    }
-
-    public bool IsCharE(int toCheck)
-    {
-      return _userString[toCheck] == 'e';
-    }
-    public bool IsCharO()
-    {
-      return _userString[toCheck] == 'o';
-    }
-    public bool IsCharI()
-    {
-      return _userString[toCheck] == 'I';
-    }
-    public bool IsCharT()
-    {
-      return _userString[toCheck] == 't';
-    }
-    public bool IsCharS()
-    {
-      return _userString[toCheck] == 's';
+      else if(IsCharO(c))
+      {
+        return '0';
+      }
+      else if(IsCharI(c))
+      {
+        return '1';
+      }
+      else if(IsCharT(c))
+      {
+        return '7';
+      }
+      else if(IsCharS(c))
+      {
+        return 'z';
+      }
+      else return c;
     }
   }
-
 }

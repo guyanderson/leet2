@@ -10,5 +10,5 @@
 | Program will identify 'e' | e | 3 |
 | Program will identify 'o' | o | 0 |
 | Program will identify 'I' (upper case only)  | I | 1 |
-| Program will identify 't' | 7 |
+| Program will identify 't' | t | 7 |
 | Program will identify 's' (unless its the first letter of a word) | s | z |
