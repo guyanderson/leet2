@@ -8,6 +8,14 @@ namespace LeetSpeak.Objects
   public class LeetSpeakTest
   {
     [Fact]
+    public void Convert_ArrayLoop_string()
+    {
+      // char[] array = 'e', 'd', 'p';
+      string sentence = "edp";
+      LeetSpeak newLeetSpeak = new LeetSpeak(sentence);
+      Assert.Equal("3dp", newLeetSpeak.Convert());
+    }
+    [Fact]
     public void IsCharE_ForLeetSpeak_true()
     {
       char c = 'e';

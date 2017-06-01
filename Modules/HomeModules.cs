@@ -11,11 +11,10 @@ namespace LeetSpeak.Objects
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
-      Post["/sentence"] = _ => {
+      Post["/result"] = _ => {
         LeetSpeak newLeetSpeak = new LeetSpeak(Request.Form["userInput"]);
         return View["result.cshtml", newLeetSpeak];
       };
     }
   }
-
 }

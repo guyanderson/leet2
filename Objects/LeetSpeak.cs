@@ -6,13 +6,26 @@ namespace LeetSpeak.Objects
 {
   public class LeetSpeak
   {
-    private string _toCheck;
-    public LeetSpeak(string userSentence)
-    {
-      _toCheck = userSentence;
-    }
+// variable / constructor / public methods /private Methods
 
-    public bool IsCharE(char c)
+// variable for user entry into constructor: property
+    private string _toCheck;
+// object
+    public LeetSpeak(string toCheck)
+    {
+      _toCheck = toCheck;
+    }
+// Methods
+    public string Convert()
+    {
+      string result = ""; //create empty string to retur result to
+      char[] charArray = _toCheck.ToCharArray(); // create array to hold _toCheck after .ToCharArray has ran
+      for(int i = 0; i < charArray.Length; i++ ) {
+        result += Convert(charArray[i]); //index through all chars in array, assigning chars to result
+      }
+      return result; //returns result
+    }
+      public bool IsCharE(char c)
     {
       return c == 'e' || c == 'E';
     }
@@ -32,6 +45,7 @@ namespace LeetSpeak.Objects
     {
       return c == 's' || c == 'S';
     }
+
     public char Convert(char c)
     {
       if(IsCharE(c))
